@@ -1,0 +1,55 @@
+﻿<script src="~/js/tareas.js"></script>
+@{
+    ViewData["Title"] = "actualizar";
+}
+
+<br /><br />
+<a href="~/Tareas/consultar/@ViewData["idusuario"]" style="font-size: 19px;"><img src="~/images/atras.png" width="20px" height="20px" /></a>
+<div class='container'>
+    <h2><b>MODULO DE ACTUALIZACIÓN REGISTRO</b></h2>
+    <p> <span class="label label-default">Podrá Presionar el botón  para actualizar registro.</span></p>
+</div>
+<div id="actualizado"></div> 
+<div class="container" id="mostrar">
+    <input id="idusuario" value="@ViewData["idusuario"]" style="visibility:hidden" />
+    <div class="col-md-1">
+        <label>ID</label>
+        <input id="id" value="@ViewData["id"]" type="text" class="form-control" disabled>
+    </div>
+    <div class="col-md-2">
+        <label>AUTOR:</label>
+        <input id="autor" value="@ViewData["autor"]" type="text" class="form-control" disabled>
+    </div>
+    <div class="col-md-3">
+        <label>FECHA CREACIÓN:</label>
+        <input id="fechac" value="@ViewData["fechac"]" type="date" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label>FECHA VENCIMIENTO:</label>
+        <input id="fechav" value="@ViewData["fechav"]" type="date" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label>ESTADO:</label>
+        <select id="estado" value="@ViewData["estado"]" class="form-control">
+            @if (@ViewData["estado"] == "si")
+            {
+                <option value="no"> No Finalizado</option>
+                <option value="si">Finalizado</option>
+            }
+            else
+            {
+                <option value="no">No Finalizado</option>
+                <option value="si">Finalizado</option>
+            }
+        </select>
+    </div>
+
+    <div class="col-md-12">
+        <label>DESCRIPCIÓN:</label>
+        <input id="descripcion" value="@ViewData["descripcion"]" class="form-control" type="text">
+    </div>
+    <div align="right">
+        <br /><br /><br /><br /><br />
+        <button class='btn btn-warning glyphicon glyphicon-edit' onclick="editar()" data-toggle="tooltip" title="Actualizar Registro"></button>
+    </div>
+</div>

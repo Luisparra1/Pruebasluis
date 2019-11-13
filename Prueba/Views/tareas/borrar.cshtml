@@ -1,0 +1,35 @@
+﻿<script src="~/js/tareas.js"></script>
+@{
+    ViewData["Title"] = "borrar";
+}
+<div id="dele"></div>
+<br /><br />
+<a href="~/Tareas/consultar/@ViewData["idusuario"]" style="font-size: 19px;"><img src="~/images/atras.png" width="16px" height="16px" /></a>
+<div class='container'>
+    <h2><b>MODULO DE ELIMINACIÓN DE REGISTRO</b></h2>
+    <p> <span class="label label-danger">Podrá Presionar el botón para eliminar la tarea.</span></p>
+</div>
+        <div align="left" class="jumbotron">
+            <p>
+                <strong>ID:</strong>@ViewData["id"]<br />
+                <strong>AUTOR:</strong>@ViewData["autor"]<br />
+                <strong>FECHA CREACIÓN:</strong>@ViewData["fechac"]<br />
+
+                @if (@ViewData["estado"] == "no")
+                {
+                    <strong>ESTADO:</strong><span class="label label-default">FINALIZADO</span><br />
+                }
+                else
+                {
+                    <strong>ESTADO:</strong><span class="label label-default">NO FINALIZADO</span><br />
+                }
+                <strong>FECHA VENCIMIENTO:</strong>@ViewData["fechav"]<br />
+                <strong>DESCRIPCION:</strong>@ViewData["descripcion"]
+            </p>
+        </div>
+        <input id="id" value="@ViewData["id"]" class="form-control" type="text" style="visibility:hidden">
+    <div align="right">
+        <br />
+        <button class='btn btn-danger glyphicon glyphicon-trash' onclick="eliminar()" data-toggle="tooltip" title="Actualizar Registro"></button>
+    </div>
+</div>

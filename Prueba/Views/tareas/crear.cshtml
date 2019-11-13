@@ -1,0 +1,46 @@
+﻿<script src="~/js/tareas.js"></script>
+@{
+    ViewData["Title"] = "crear";
+}
+
+<br />
+<div id="agregado"></div>
+<br />
+<a href="~/Tareas/consultar/@ViewData["crear"]" style="font-size: 19px;"><img src="~/images/atras.png" width="17px" height="17px" /></a>
+<div class='container'>
+    <h2><b>MODULO DE CREAR REGISTRO</b></h2>
+    <p> <span class="label label-default">Podrá Presionar el botón  para guardar registro nuevo.</span></p>
+</div>
+
+<div class="container">
+    <input id="crear" value="@ViewData["crear"]" style="visibility:hidden" />
+    <div class="col-md-2">
+        <label>AUTOR:</label>
+            <input id="autor" type="text" class="form-control">
+    </div>
+    <div class="col-md-3">
+        <label>F.CREACIÓN:</label>
+        <input id="fechac" type="date" class="form-control">
+    </div>
+    <div class="col-md-3">
+        <label>F.VENCIMIENTO:</label>
+        <input id="fechav" type="date" class="form-control">
+    </div>
+    <div class="col-md-2">
+        <label>ESTADO:</label>
+        <select id="estado" class="form-control">
+            <option value="#"></option>
+            <option value="si">FINALIZADO</option>
+            <option value="no">NO FINALIZADO</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <label>DESCRIPCIÓN:</label>
+        <textarea id="descripcion" class="form-control"> </textarea>
+    </div>
+    <div align="right">
+        <br /><br /><br /><br /><br />
+        <button class=" btn btn-success glyphicon glyphicon-plus" onclick="agregar()"></button>
+    </div>
+</div>
+

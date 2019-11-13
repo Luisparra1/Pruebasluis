@@ -1,0 +1,38 @@
+﻿<script src="~/js/tareas.js"></script>
+@{
+    ViewData["Title"] = "consultar";
+}
+<div id="dele"></div>
+<div class='container'>
+    <h2><b>MODULO DE CONSULTA DE REGISTROS</b></h2>
+    <p> <span class="label label-default">Podrá Presionar el botón de consultar para ir al item de consultas..</span></p>
+</div>
+<div align="right">
+    <a href="~/Tareas/crear/@ViewData["consultar"]" style="font-size: 17px;"><img src="~/images/agregar.png" width="30px" height="30px" /></a>
+</div>
+<input id="consultar" value="@ViewData["consultar"]" style="visibility:hidden"/>
+<div class="col-md-8">
+    <select id="sel" onchange="search()" class="form-control">
+        <option value='#'>ESCOJA UNA OPCIÓN PARA BUSCAR...</option>
+        <option value="1">TODAS LAS TAREAS</option>
+        <option value="2">SOLO MIS TAREAS</option>
+        <option value="3">TAREAS FINALIZADAS</option>
+        <option value="4">TAREAS PENDIENTES</option>
+        <option value="5">TODAS LAS TAREAS SIN IMPORTAR EL ESTADO</option>
+        <option value="6">TODAS MIS TAREAS SIN IMPORTAR EL ESTADO</option>
+        <option value="7">ORDENAR TODAS LAS TAREAS POR FECHA DE VENCIMIENTO ASCENDENTE</option>
+        <option value="8">ORDENAR TODAS LAS TAREAS POR FECHA DE VENCIMIENTO DESCENDENTE</option>
+        <option value="9">SOLO MIS TAREAS FINALIZADAS</option>
+        <option value="10">SOLO MIS TAREAS PENDIENTES</option>
+        <option value="11">TODAS MIS TAREAS FINALIZADAS POR FECHA DE VENCIMIENTO ASCENDENTE</option>
+        <option value="12">TODAS MIS TAREAS FINALIZADAS POR FECHA DE VENCIMIENTO DESCENDENTE</option>
+        <option value="13">TODAS MIS TAREAS PENDIENTES POR FECHA DE VENCIMIENTO ASCENDENTE</option>
+        <option value="14">TODAS MIS TAREAS PENDIENTES POR FECHA DE VENCIMIENTO DESCENDENTE</option>
+        <option value="15">TODAS MIS TAREAS PENDIENTES POR FECHA DE CREACIÓN ASCENDENTE</option>
+        <option value="16">TODAS MIS TAREAS FINALIZADAS POR FECHA DE CREACIÓN DESCENDENTE</option>
+    </select>
+</div><br /><br />
+<div class="container">
+    <div id="resultado"></div>
+</div>
+<div id="resultado1"></div>
